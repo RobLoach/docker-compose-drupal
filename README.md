@@ -12,13 +12,20 @@ containers. This project splits the services required by
 to manage them.
 
 
+## Features
+
+* [PHP's Build-in web server](http://php.net/manual/en/features.commandline.webserver.php)
+* MySQL 5.7
+* Drupal 7 or 8 support
+
+
 ## Usage
 
 1. Install [Docker](http://docker.com)
 2. Install [Fig](http://fig.sh)
 3. Download Drupal Fig
   ```
-  git clone git@github.com:RobLoach/drupal-fig.git
+  git clone --branch 7.x git@github.com:RobLoach/drupal-fig.git
   ```
 4. Switch to the Drupal Fig folder
   ```
@@ -30,6 +37,7 @@ to manage them.
   ```
 6. Update [`fig.yml`](fig.yml) according to your needs
 7. Run `fig up`
+8. Visit [`http://localhost:8000`](http://localhost:8000) in your browser
 
 
 ## License

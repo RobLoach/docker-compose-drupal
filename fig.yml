@@ -13,12 +13,7 @@ web:
     DRUPAL_SITE_NAME: Drupal
     DRUPAL_USER: admin
     DRUPAL_PASS: admin
-    # MySQL server
-    MYSQL_USER: drupal
-    MYSQL_PASS: drupal
-    MYSQL_HOST: mysql
-    MYSQL_PORT: 3306
-    MYSQL_DATABASE: drupal
+    DRUPAL_DBURL: mysql://drupal:drupal@mysql:3306/drupal
   ports:
     # Host machine's port 8000 will map to Drupal's port 80
     - "8000:80"
