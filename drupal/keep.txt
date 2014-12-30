@@ -1,2 +1,0 @@
-This is where Drupal should be placed. Either set it up with a symlink to your
-Drupal directory, or copy the files directly in here.

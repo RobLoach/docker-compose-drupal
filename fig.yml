@@ -1,18 +1,37 @@
+# Drupal Fig
+# Fig configuration to run a Drupal instance.
+
+# PHP Web Server
 web:
-  build: containers/drupal
-  volumes:
-    # Drupal should live in the "drupal" directory
-    - drupal:/app
+  # Build the image off of Dockie
+  # https://github.com/robloach/dockie
+  image: dockie/dockie
+  # Environment variables
   environment:
+    # Drupal settings
     DRUPAL_PROFILE: standard
     DRUPAL_SITE_NAME: Drupal
     DRUPAL_USER: admin
     DRUPAL_PASS: admin
+    # MySQL server
+    MYSQL_USER: drupal
+    MYSQL_PASS: drupal
+    MYSQL_HOST: mysql
+    MYSQL_PORT: 3306
+    MYSQL_DATABASE: drupal
   ports:
     # Host machine's port 8000 will map to Drupal's port 80
     - "8000:80"
+  volumes:
+    # Drupal should live in the "drupal" directory
+    - drupal:/app
+    - drupal-fig.sh:/drupal-fig.sh
   links:
     - mysql:mysql
+  command: sh /drupal-fig.sh
+  working_dir: /app
+
+# MySQL Server
 mysql:
   image: mysql:5.7
   environment:

@@ -16,9 +16,20 @@ to manage them.
 
 1. Install [Docker](http://docker.com)
 2. Install [Fig](http://fig.sh)
-3. Place Drupal in the `drupal` folder
-4. Update [`fig.yml`](fig.yml) according to your needs
-5. Run `fig up`
+3. Download Drupal Fig
+  ```
+  git clone git@github.com:RobLoach/drupal-fig.git
+  ```
+4. Switch to the Drupal Fig folder
+  ```
+  cd drupal-fig
+  ```
+5. Place Drupal in the `drupal` folder so it appears at `drupal-fig/drupal`
+  ```
+  git clone http://git.drupal.org/project/drupal.git
+  ```
+6. Update [`fig.yml`](fig.yml) according to your needs
+7. Run `fig up`
 
 
 ## License
