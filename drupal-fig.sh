@@ -9,7 +9,7 @@ rm -rf /app/sites/default/settings.php /app/sites/default/services.yml
 
 # Install the site.
 drush site-install $DRUPAL_PROFILE -y \
-  --db-url="mysqli://$MYSQL_USER:$MYSQL_PASS@$MYSQL_HOST:$MYSQL_PORT/$MYSQL_DATABASE" \
+  --db-url="mysql://$MYSQL_USER:$MYSQL_PASS@$MYSQL_HOST:$MYSQL_PORT/$MYSQL_DATABASE" \
   --site-name="$DRUPAL_SITE_NAME" \
   --account-name="$DRUPAL_USER" \
   --account-pass="$DRUPAL_PASS"
