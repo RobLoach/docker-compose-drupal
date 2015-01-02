@@ -9,11 +9,17 @@ rm -rf sites/default/files
 mkdir -p sites/default/files
 chmod 777 -R sites/default/files
 
-# Reset the settings and services files.
-cp -f sites/default/default.settings.php sites/default/settings.php && \
+# Set up the settings.php file, if needed.
+if [ ! -e "sites/default/settings.php" ]; then
+  cp -f sites/default/default.settings.php sites/default/settings.php
   chmod 777 sites/default/settings.php
-cp -f sites/default/default.services.yml sites/default/services.yml && \
+fi
+
+# Set up the services file, if needed.
+if [ ! -e "sites/default/services.yml" ] && [ -e "sites/default/default.services.yml" ]; then
+  cp -f sites/default/default.services.yml sites/default/services.yml
   chmod 777 /app/sites/default/services.yml
+fi
 
 # Install the site.
 drush site-install $DRUPAL_PROFILE -y \
