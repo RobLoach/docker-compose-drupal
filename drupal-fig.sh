@@ -22,11 +22,12 @@ if [ ! -e "sites/default/services.yml" ] && [ -e "sites/default/default.services
 fi
 
 # Install the site.
-drush site-install $DRUPAL_PROFILE -y \
-  --db-url="$DRUPAL_DBURL" \
-  --site-name="$DRUPAL_SITE_NAME" \
-  --account-name="$DRUPAL_USER" \
-  --account-pass="$DRUPAL_PASS"
+# @todo Evaludate whether or not we should have this.
+#drush site-install $DRUPAL_PROFILE -y \
+#  --db-url="$DRUPAL_DBURL" \
+#  --site-name="$DRUPAL_SITE_NAME" \
+#  --account-name="$DRUPAL_USER" \
+#  --account-pass="$DRUPAL_PASS"
 
 # Set up the PHP web server.
 php -S 0.0.0.0:80 -t /app
