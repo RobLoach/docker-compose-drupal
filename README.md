@@ -35,9 +35,14 @@ to manage them.
   ```
   git clone http://git.drupal.org/project/drupal.git
   ```
-6. Update [`fig.yml`](fig.yml) according to your needs
-7. Run `fig up`
-8. Visit [`http://localhost:8000`](http://localhost:8000) in your browser
+6. Run `fig up`
+7. Visit [`http://localhost:8000`](http://localhost:8000) in your browser
+8. Go through the Drupal install process using:
+  * Driver: MySQL
+  * Database name: `drupal`
+  * Database username: `drupal`
+  * Database password: `drupal`
+  * Database host: `mysql`
 
 
 ## License
