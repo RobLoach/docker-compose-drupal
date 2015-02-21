@@ -22,21 +22,28 @@ to manage them.
 ## Usage
 
 1. Install [Docker](http://docker.com)
+
 2. Install [Fig](http://fig.sh)
+
 3. Download Drupal Fig
   ```
   git clone --branch 7.x git@github.com:RobLoach/drupal-fig.git
   ```
+
 4. Switch to the Drupal Fig folder
   ```
   cd drupal-fig
   ```
+
 5. Place Drupal in the `drupal` folder so it appears at `drupal-fig/drupal`
   ```
   git clone http://git.drupal.org/project/drupal.git
   ```
+
 6. Run `fig up`
+
 7. Visit [`http://localhost:8000`](http://localhost:8000) in your browser
+
 8. Go through the Drupal install process using:
   * Driver: MySQL
   * Database name: `drupal`
