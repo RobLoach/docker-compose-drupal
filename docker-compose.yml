@@ -20,19 +20,22 @@ web:
   volumes:
     # Drupal should live in the "drupal" directory
     - drupal:/app
-    - drupal-fig.sh:/drupal-fig.sh
+    - docker-compose.sh:/docker-compose.sh
   links:
     - mysql:mysql
-  command: sh /drupal-fig.sh
+  command: sh /docker-compose.sh
   working_dir: /app
+  restart: always
 
 # MySQL Server
 mysql:
   image: mysql:5.7
   environment:
     MYSQL_USER: drupal
-    MYSQL_DATABASE: drupal
     MYSQL_PASSWORD: drupal
-    MYSQL_ROOT_PASSWORD: root
+    MYSQL_DATABASE: drupal
+    MYSQL_ROOT_PASSWORD: ""
+    MYSQL_ALLOW_EMPTY_PASSWORD: yes
   expose:
     - "3306"
+  restart: always

@@ -1,55 +1,18 @@
-# Drupal Fig
+# Driblet
 
-[Fig](http://fig.sh) setup to run a [Drupal](http://drupal.org) instance.
-
-
-## Introduction
-
-[Docker](http://docker.com) automates the deployment of applications within
-containers. [Fig](http://fig.sh) provides a way to manage multiple Docker
-containers. This project splits the services required by
-[Drupal](http://drupal.org) into different Docker containers, then uses Fig
-to manage them.
+Experimental Drupal development environment using Docker Compose.
 
 
-## Features
+## Prerequisites
 
-* [PHP's Build-in web server](http://php.net/manual/en/features.commandline.webserver.php)
-* MySQL 5.7
-* Drupal 7 or 8 support
-
-
-## Usage
-
-1. Install [Docker](http://docker.com)
-
-2. Install [Fig](http://fig.sh)
-
-3. Download Drupal Fig
+1. [Docker](http://docker.com)
   ```
-  git clone --branch 7.x git@github.com:RobLoach/drupal-fig.git
+  docker --version
   ```
-
-4. Switch to the Drupal Fig folder
+2. [Docker Compose](https://docs.docker.com/compose/)
   ```
-  cd drupal-fig
+  docker-compose --version
   ```
-
-5. Place Drupal in the `drupal` folder so it appears at `drupal-fig/drupal`
-  ```
-  git clone http://git.drupal.org/project/drupal.git
-  ```
-
-6. Run `fig up`
-
-7. Visit [`http://localhost:8000`](http://localhost:8000) in your browser
-
-8. Go through the Drupal install process using:
-  * Driver: MySQL
-  * Database name: `drupal`
-  * Database username: `drupal`
-  * Database password: `drupal`
-  * Database host: `mysql`
 
 
 ## License
