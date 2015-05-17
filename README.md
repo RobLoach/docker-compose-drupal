@@ -1,6 +1,6 @@
-# Driblet
+# Docker Compose: Drupal
 
-Experimental Drupal development environment using Docker Compose.
+Drupal development environment using [Docker Compose](https://docs.docker.com/compose/).
 
 
 ## Prerequisites
@@ -14,6 +14,13 @@ Experimental Drupal development environment using Docker Compose.
   docker-compose --version
   ```
 
+
+## Usage
+
+1. Place Drupal in the `/drupal/` directory so that it lives at `docker-compose-drupal/drupal`.
+2. Run `docker-compose up`
+3. Visit `http://localhost:8000` in your browser
+4. Use `drupal:drupal@mysql/drupal` for the database settings
 
 ## License
 
