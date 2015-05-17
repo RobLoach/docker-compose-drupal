@@ -1,6 +1,3 @@
-# Drupal Fig
-# Fig configuration to run a Drupal instance.
-
 # PHP Web Server
 web:
   # Build the image off of Dockie
