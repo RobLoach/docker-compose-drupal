@@ -16,11 +16,11 @@ web:
     - "8000:80"
   volumes:
     # Drupal should live in the "drupal" directory
-    - drupal:/app
-    - docker-compose.sh:/docker-compose.sh
+    - ./drupal:/app
+    - ./docker-compose.sh:/docker-compose.sh
   links:
     - mysql:mysql
-  command: sh /docker-compose.sh
+  command: php -S 0.0.0.0:80 -t /app
   working_dir: /app
   restart: always
 
@@ -31,8 +31,8 @@ mysql:
     MYSQL_USER: drupal
     MYSQL_PASSWORD: drupal
     MYSQL_DATABASE: drupal
-    MYSQL_ROOT_PASSWORD: ""
-    MYSQL_ALLOW_EMPTY_PASSWORD: yes
+    MYSQL_ROOT_PASSWORD: ''
+    MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
   expose:
     - "3306"
   restart: always
