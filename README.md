@@ -21,6 +21,7 @@ Drupal development environment using [Docker Compose](https://docs.docker.com/co
 2. Run `docker-compose up`
 3. Visit `http://localhost:8000` in your browser
 4. Use `drupal:drupal@mysql/drupal` for the database settings
+5. To run a [Drush](http://drush.org) command, execute `docker-compose run web drush status`
 
 ## License
 
