@@ -1,8 +1,8 @@
 # PHP Web Server
 web:
-  # Build the image off of Dockie
-  # https://github.com/robloach/dockie
-  image: dockie/dockie
+  # Build the Drupal 8 image
+  # https://hub.docker.com/r/_/drupal/
+  image: drupal:8
   # Environment variables
   environment:
     # Drupal settings
@@ -10,23 +10,22 @@ web:
     DRUPAL_SITE_NAME: Drupal
     DRUPAL_USER: admin
     DRUPAL_PASS: admin
-    DRUPAL_DBURL: mysql://drupal:drupal@mysql:3306/drupal
+    DRUPAL_DBURL: mysql://drupal:drupal@database:3306/drupal
   ports:
     # Host machine's port 8000 will map to Drupal's port 80
     - "8000:80"
   volumes:
     # Drupal should live in the "drupal" directory
     - ./drupal:/app
-    - ./docker-compose.sh:/docker-compose.sh
   links:
-    - mysql:mysql
+    - database:database
   command: php -S 0.0.0.0:80 -t /app
   working_dir: /app
   restart: always
 
 # MySQL Server
-mysql:
-  image: mysql:5.7
+database:
+  image: mariadb:10
   environment:
     MYSQL_USER: drupal
     MYSQL_PASSWORD: drupal
