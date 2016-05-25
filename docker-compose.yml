@@ -15,12 +15,12 @@ web:
     # Host machine's port 8000 will map to Drupal's port 80
     - "8000:80"
   volumes:
-    # Drupal should live in the "drupal" directory
-    - ./drupal:/app
+    # Map the local sites folder
+    - ./sites:/var/www/html/sites
   links:
     - database:database
-  command: php -S 0.0.0.0:80 -t /app
-  working_dir: /app
+  command: php -S 0.0.0.0:80 -t /var/www/html
+  working_dir: /var/www/html
   restart: always
 
 # MySQL Server
