@@ -1,3 +1,7 @@
+# Deprecated
+
+Use [Docker4Drupal](https://github.com/Wodby/docker4drupal) instead.
+
 # Docker Compose: Drupal
 
 Drupal development environment using [Docker Compose](https://docs.docker.com/compose/).
